@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plumber City Johor Bahru | Servis Plumber Taman Stulang Laut</title>
+  <meta name="description" content="Plumber City Johor Bahru menyediakan servis plumber sekitar Taman Stulang Laut dan Johor Bahru untuk tandas tersumbat, singki tersumbat, paip bocor, paip air dan penyelenggaraan." />
+  <meta name="theme-color" content="#0c3e86" />
+
+  <style>
+    :root {
+      --primary: #1557b0;
+      --primary-dark: #0b397a;
+      --primary-light: #43b7ee;
+      --accent: #00d0ff;
+      --sky: #eef8ff;
+      --sky-2: #f7fbff;
+      --text: #172033;
+      --muted: #64748b;
+      --white: #ffffff;
+      --line: #e4edf7;
+      --shadow: 0 20px 55px rgba(15, 75, 145, .13);
+      --shadow-soft: 0 12px 32px rgba(15, 75, 145, .09);
+      --radius: 26px;
+      --container: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+      color: var(--white);
+      font-size: 13px;
+    }
+
+    .topbar-inner {
+      min-height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .topbar-pill,
+    .topbar-links span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      font-weight: 800;
+    }
+
+    .topbar-pill {
+      padding: 6px 14px;
+      background: rgba(255,255,255,.13);
+    }
+
+    .topbar-links {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      opacity: .95;
+    }
+
+    .topbar-links span {
+      padding: 6px 12px;
+      background: rgba(255,255,255,.08);
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226, 237, 249, .9);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 950;
+      color: var(--primary-dark);
+      letter-spacing: -0.035em;
+      font-size: 22px;
+      white-space: nowrap;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(145deg, var(--primary), var(--primary-light));
+      box-shadow: 0 12px 28px rgba(67, 183, 238, .32);
+      animation: softPulse 4.5s ease-in-out infinite;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #263447;
+    }
+
+    .nav-menu a {
+      position: relative;
+      transition: color .2s ease;
+    }
+
+    .nav-menu a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--primary-light);
+      transition: width .25s ease;
+    }
+
+    .nav-menu a:hover {
+      color: var(--primary);
+    }
+
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 0 23px;
+      border-radius: 999px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 900;
+      font-size: 14px;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      box-shadow: 0 16px 34px rgba(21, 87, 176, .26);
+    }
+
+    .btn-outline {
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,.72);
+      background: rgba(255,255,255,.12);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-soft {
+      color: var(--primary);
+      background: var(--sky);
+    }
+
+    .hamburger {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: white;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--primary-dark);
+      margin: 5px auto;
+      border-radius: 999px;
+      transition: .2s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(5, 18, 38, .82) 0%, rgba(9, 42, 86, .63) 46%, rgba(255,255,255,.16) 100%),
+        url("https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1900&q=80") center/cover no-repeat;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 430px;
+      height: 430px;
+      right: -120px;
+      top: 80px;
+      background: radial-gradient(circle, rgba(67,183,238,.34), transparent 66%);
+      animation: floatBlob 8s ease-in-out infinite;
+    }
+
+    .hero::after {
+      left: -6%;
+      right: -6%;
+      bottom: -92px;
+      height: 180px;
+      background: var(--white);
+      border-radius: 50% 50% 0 0 / 55% 55% 0 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .75fr;
+      gap: 44px;
+      align-items: center;
+      padding: 88px 0 132px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: var(--white);
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      font-weight: 900;
+      font-size: 13px;
+      margin-bottom: 22px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: clamp(42px, 6vw, 78px);
+      line-height: .98;
+      letter-spacing: -0.065em;
+      max-width: 780px;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      color: rgba(255,255,255,.9);
+      font-size: 17px;
+      max-width: 650px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 44px;
+      max-width: 690px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 20px;
+      color: white;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(12px);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 27px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      font-size: 13px;
+      opacity: .88;
+    }
+
+    .callback-card {
+      background: rgba(255,255,255,.95);
+      border: 1px solid rgba(255,255,255,.72);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .callback-card::before {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      right: -55px;
+      top: -55px;
+      border-radius: 50%;
+      background: rgba(67,183,238,.16);
+    }
+
+    .callback-card h2 {
+      font-size: 27px;
+      line-height: 1.1;
+      color: var(--primary-dark);
+      letter-spacing: -0.045em;
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .callback-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+      position: relative;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      min-height: 50px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 0 15px;
+      color: var(--text);
+      outline: none;
+      transition: .2s ease;
+      background: white;
+    }
+
+    .form-group textarea {
+      min-height: 112px;
+      padding-top: 14px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 4px rgba(67,183,238,.14);
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-soft {
+      background: linear-gradient(180deg, var(--white) 0%, var(--sky) 100%);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 42px;
+    }
+
+    .section-kicker {
+      color: var(--primary-light);
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      color: var(--primary-dark);
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.02;
+      letter-spacing: -0.058em;
+      max-width: 760px;
+    }
+
+    .section-desc {
+      max-width: 540px;
+      color: var(--muted);
+    }
+
+    .cards-3,
+    .services-grid,
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card,
+    .service-card,
+    .testimonial-card,
+    .process-card,
+    .faq-card {
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card:hover,
+    .service-card:hover,
+    .testimonial-card:hover,
+    .process-card:hover,
+    .faq-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+      border-color: rgba(67,183,238,.5);
+    }
+
+    .feature-card {
+      min-height: 260px;
+      padding: 34px;
+    }
+
+    .feature-card.active {
+      color: white;
+      background: linear-gradient(145deg, var(--primary), var(--primary-light));
+      border-color: transparent;
+    }
+
+    .feature-card.active p,
+    .feature-card.active .feature-link {
+      color: rgba(255,255,255,.88);
+    }
+
+    .icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 22px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 24px;
+      color: var(--primary);
+      background: var(--sky);
+    }
+
+    .feature-card.active .icon {
+      background: rgba(255,255,255,.16);
+      color: white;
+    }
+
+    .feature-card h3,
+    .service-card h3,
+    .process-card h3,
+    .faq-card h3 {
+      letter-spacing: -0.04em;
+    }
+
+    .feature-card h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p,
+    .service-card p,
+    .process-card p,
+    .faq-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .feature-card.active p {
+      color: rgba(255,255,255,.86);
+    }
+
+    .feature-link,
+    .text-link {
+      display: inline-flex;
+      margin-top: 18px;
+      color: var(--primary);
+      font-weight: 950;
+      font-size: 14px;
+    }
+
+    .service-card {
+      min-height: 265px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-photo {
+      width: calc(100% + 60px);
+      height: 155px;
+      margin: -30px -30px 24px;
+      overflow: hidden;
+      border-radius: 26px 26px 0 0;
+      background: var(--sky);
+    }
+
+    .service-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .service-card:hover .service-photo img {
+      transform: scale(1.06);
+    }
+
+    .mini-icon {
+      width: 52px;
+      height: 52px;
+      color: var(--primary);
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: .92fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .why-list {
+      display: grid;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .why-item {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .why-item-icon {
+      width: 54px;
+      height: 54px;
+      border: 1px solid rgba(21,87,176,.18);
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      background: white;
+      box-shadow: 0 10px 24px rgba(15, 75, 145, .08);
+    }
+
+    .why-item h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+      letter-spacing: -0.035em;
+    }
+
+    .why-item p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .image-stack {
+      position: relative;
+    }
+
+    .image-stack .main-photo {
+      height: 560px;
+      object-fit: cover;
+      width: 100%;
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .floating-note {
+      position: absolute;
+      left: -34px;
+      bottom: 36px;
+      width: min(385px, 90%);
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.95);
+      border: 1px solid rgba(255,255,255,.72);
+      box-shadow: 0 24px 60px rgba(11, 42, 87, .18);
+      backdrop-filter: blur(12px);
+    }
+
+    .floating-note strong {
+      display: block;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+      font-size: 18px;
+      letter-spacing: -0.035em;
+    }
+
+    .floating-note p {
+      color: #415064;
+      font-size: 15px;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      counter-reset: step;
+    }
+
+    .process-card {
+      padding: 30px 24px;
+      counter-increment: step;
+    }
+
+    .process-card::before {
+      content: "0" counter(step);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      color: white;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      font-weight: 950;
+      margin-bottom: 26px;
+    }
+
+    .process-card h3 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .photo-strip {
+      padding: 34px 0 0;
+      background: var(--white);
+      position: relative;
+      z-index: 2;
+    }
+
+    .photo-strip-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-top: -92px;
+    }
+
+    .photo-tile {
+      min-height: 230px;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow);
+      border: 8px solid white;
+      background: var(--sky);
+    }
+
+    .photo-tile.large {
+      min-height: 310px;
+    }
+
+    .photo-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .photo-tile:hover img {
+      transform: scale(1.06);
+    }
+
+    .photo-label {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      color: white;
+      background: rgba(8, 32, 66, .72);
+      backdrop-filter: blur(12px);
+      font-weight: 950;
+      font-size: 14px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .gallery-main,
+    .gallery-side-card {
+      border-radius: 30px;
+      overflow: hidden;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-main {
+      position: relative;
+      min-height: 520px;
+    }
+
+    .gallery-main img,
+    .gallery-side-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      left: 26px;
+      right: 26px;
+      bottom: 26px;
+      padding: 24px;
+      border-radius: 24px;
+      color: white;
+      background: rgba(8, 32, 66, .76);
+      backdrop-filter: blur(14px);
+    }
+
+    .gallery-overlay h3 {
+      font-size: 28px;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .gallery-overlay p {
+      color: rgba(255,255,255,.86);
+    }
+
+    .gallery-side {
+      display: grid;
+      gap: 24px;
+    }
+
+    .gallery-side-card {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      min-height: 248px;
+    }
+
+    .gallery-side-content {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .gallery-side-content h3 {
+      color: var(--primary-dark);
+      font-size: 22px;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .gallery-side-content p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .testimonials .testimonial-card {
+      padding: 28px;
+    }
+
+    .stars {
+      color: #f6b800;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-card p {
+      color: #344155;
+      margin-bottom: 22px;
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      font-weight: 950;
+    }
+
+    .person strong {
+      display: block;
+      line-height: 1.1;
+    }
+
+    .person span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .faq-card {
+      padding: 28px;
+    }
+
+    .faq-card h3 {
+      color: var(--primary-dark);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .cta {
+      padding: 100px 0;
+      color: white;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(12, 62, 134, .9), rgba(67,183,238,.78)),
+        url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+    }
+
+    .cta::before,
+    .cta::after {
+      content: "";
+      position: absolute;
+      left: -5%;
+      right: -5%;
+      height: 120px;
+      background: white;
+      z-index: -1;
+    }
+
+    .cta::before {
+      top: -72px;
+      border-radius: 0 0 50% 50% / 0 0 70% 70%;
+    }
+
+    .cta::after {
+      bottom: -72px;
+      border-radius: 50% 50% 0 0 / 70% 70% 0 0;
+    }
+
+    .cta h2 {
+      font-size: clamp(34px, 5vw, 60px);
+      letter-spacing: -0.055em;
+      line-height: 1.02;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      opacity: .92;
+      font-size: 18px;
+      margin-bottom: 28px;
+      max-width: 720px;
+      margin-inline: auto;
+    }
+
+    .footer {
+      padding: 80px 0 34px;
+      background: #ffffff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.25fr repeat(3, 1fr);
+      gap: 36px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .footer h3 {
+      color: var(--primary-dark);
+      font-size: 17px;
+      margin-bottom: 18px;
+    }
+
+    .footer p,
+    .footer li,
+    .footer a {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-brand p {
+      margin-top: 16px;
+      max-width: 380px;
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+    }
+
+    .socials a,
+    .back-to-top,
+    .float-wa {
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-weight: 950;
+    }
+
+    .socials a {
+      width: 38px;
+      height: 38px;
+      background: var(--sky);
+      color: var(--primary);
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 82px;
+      z-index: 40;
+      width: 46px;
+      height: 46px;
+      border: 0;
+      cursor: pointer;
+      color: white;
+      background: var(--primary);
+      box-shadow: 0 14px 34px rgba(21,87,176,.3);
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: .25s ease;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .float-wa {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 42;
+      width: 54px;
+      height: 54px;
+      color: white;
+      background: linear-gradient(135deg, #25D366, #0da84c);
+      box-shadow: 0 16px 36px rgba(37, 211, 102, .33);
+      animation: waPulse 3s ease-in-out infinite;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger > * {
+      transition-delay: calc(var(--i, 0) * 80ms);
+    }
+
+    @keyframes softPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 12px 28px rgba(67, 183, 238, .32); }
+      50% { transform: scale(1.04); box-shadow: 0 16px 36px rgba(67, 183, 238, .42); }
+    }
+
+    @keyframes floatBlob {
+      0%, 100% { transform: translate3d(0,0,0); }
+      50% { transform: translate3d(-28px, 28px, 0); }
+    }
+
+    @keyframes waPulse {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .topbar-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: 76px;
+        left: 20px;
+        right: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: white;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu a {
+        padding: 14px 10px;
+        border-radius: 12px;
+      }
+
+      .nav-menu a:hover {
+        background: var(--sky);
+      }
+
+      .nav-menu a::after {
+        display: none;
+      }
+
+      .hero-grid,
+      .why-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .callback-card {
+        max-width: 560px;
+      }
+
+      .cards-3,
+      .services-grid,
+      .testimonials,
+      .faq-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .process {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .photo-strip-grid {
+        grid-template-columns: 1fr;
+        margin-top: -70px;
+      }
+
+      .gallery-main {
+        min-height: 430px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .floating-note {
+        left: 22px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 28px, var(--container));
+      }
+
+      .topbar-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .hero-grid {
+        padding: 70px 0 108px;
+      }
+
+      .hero h1 {
+        font-size: clamp(38px, 12vw, 54px);
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions,
+      .section-head,
+      .footer-bottom {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .cards-3,
+      .services-grid,
+      .testimonials,
+      .process,
+      .faq-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .image-stack .main-photo {
+        height: 430px;
+      }
+
+      .floating-note {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        width: 100%;
+        margin-top: -86px;
+      }
+
+      .callback-card,
+      .feature-card,
+      .service-card,
+      .testimonial-card,
+      .process-card,
+      .faq-card {
+        border-radius: 22px;
+      }
+
+      .photo-strip {
+        padding-top: 18px;
+      }
+
+      .photo-strip-grid {
+        margin-top: -62px;
+        gap: 12px;
+      }
+
+      .photo-tile,
+      .photo-tile.large {
+        min-height: 220px;
+        border-radius: 22px;
+        border-width: 6px;
+      }
+
+      .gallery-main {
+        min-height: 390px;
+      }
+
+      .gallery-overlay {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        padding: 18px;
+      }
+
+      .gallery-side-card {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-side-card img {
+        height: 220px;
+      }
+
+      .service-photo {
+        height: 170px;
+      }
+
+      .back-to-top {
+        bottom: 78px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <a class="topbar-pill" href="tel:+60132665532">📞 Hubungi Sekarang: 013-266 5532</a>
+      <div class="topbar-links" aria-label="Maklumat servis">
+        <span>Servis Johor Bahru</span>
+        <span>WhatsApp Cepat</span>
+        <span>Kerja Kemas & Berpengalaman</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo" aria-label="Plumber City JB">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C8.4 6.45 5.5 10.13 5.5 14.1C5.5 18.06 8.4 21 12 21C15.6 21 18.5 18.06 18.5 14.1C18.5 10.13 15.6 6.45 12 2Z" fill="currentColor"/>
+          </svg>
+        </span>
+        Plumber City JB
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Navigasi utama">
+        <a href="#home">Laman Utama</a>
+        <a href="#services">Perkhidmatan</a>
+        <a href="#why">Kenapa Kami</a>
+        <a href="#gallery">Galeri</a>
+        <a href="#process">Proses</a>
+        <a href="#reviews">Ulasan</a>
+        <a href="#contact">Hubungi</a>
+      </nav>
+
+      <a class="btn btn-primary nav-cta" href="https://wa.me/60132665532?text=Hai%20Plumber%20City%20JB%2C%20saya%20mahu%20tanya%20servis%20plumber." target="_blank" rel="noopener">
+        WhatsApp Sekarang
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-controls="navMenu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <section class="reveal">
+        <div class="eyebrow">💧 Servis Plumber Johor Bahru</div>
+        <h1>Masalah paip, tandas atau singki? Kami bantu selesaikan.</h1>
+        <p>
+          Servis plumber sekitar Taman Stulang Laut dan Johor Bahru untuk tandas tersumbat,
+          singki tersumbat, paip bocor, tekanan air rendah dan penyelenggaraan rumah atau premis.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/60132665532?text=Hai%20Plumber%20City%20JB%2C%20saya%20mahu%20tanya%20servis%20plumber.%20Lokasi%20saya%3A" target="_blank" rel="noopener">
+            Hubungi 013-266 5532
+          </a>
+          <a class="btn btn-outline" href="#services">Lihat Perkhidmatan</a>
+        </div>
+
+        <div class="hero-stats stagger" aria-label="Kelebihan servis">
+          <div class="stat reveal">
+            <strong>JB</strong>
+            <span>Kawasan servis utama</span>
+          </div>
+          <div class="stat reveal">
+            <strong>WA</strong>
+            <span>Tempahan melalui WhatsApp</span>
+          </div>
+          <div class="stat reveal">
+            <strong>Rapi</strong>
+            <span>Kerja kemas & diuji</span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="callback-card reveal" id="contact">
+        <h2>Minta Panggilan Balik</h2>
+        <p>Isi maklumat ringkas di bawah. Butang ini akan terus membuka WhatsApp dengan mesej siap dihantar.</p>
+
+        <form id="contactForm">
+          <div class="form-group">
+            <input id="name" type="text" placeholder="Nama penuh" required />
+            <input id="phone" type="tel" placeholder="Nombor WhatsApp" required />
+            <select id="service" required>
+              <option value="">Pilih perkhidmatan</option>
+              <option>Tandas tersumbat</option>
+              <option>Singki tersumbat</option>
+              <option>Paip bocor / paip pecah</option>
+              <option>Tekanan air rendah</option>
+              <option>Penyelenggaraan paip</option>
+              <option>Lain-lain</option>
+            </select>
+            <textarea id="message" placeholder="Ceritakan masalah anda. Contoh: singki dapur tersumbat, air melimpah, lokasi Taman Stulang Laut."></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit" style="width:100%;">Hantar Melalui WhatsApp</button>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <section class="photo-strip" aria-label="Foto perkhidmatan plumber">
+    <div class="container photo-strip-grid stagger">
+      <figure class="photo-tile large reveal">
+        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=900&q=80" alt="Bilik air moden dengan kerja paip yang kemas">
+        <figcaption class="photo-label">Kerja kemas untuk rumah & premis</figcaption>
+      </figure>
+
+      <figure class="photo-tile reveal">
+        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=900&q=80" alt="Pembaikan paip dan saluran air">
+        <figcaption class="photo-label">Pembaikan paip air</figcaption>
+      </figure>
+
+      <figure class="photo-tile large reveal">
+        <img src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=900&q=80" alt="Singki dan ruang bilik air bersih">
+        <figcaption class="photo-label">Singki, tandas & saluran tersumbat</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cards-3 stagger">
+        <article class="feature-card reveal">
+          <div class="icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 16L16 4M14 4L20 10L8 22L2 16L14 4Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Pembaikan Sekali Servis</h3>
+          <p>Sesuai untuk paip bocor, pili rosak, tandas tersumbat atau masalah saluran air yang perlu dibaiki segera.</p>
+          <a href="#contact" class="feature-link">Tempah pembaikan →</a>
+        </article>
+
+        <article class="feature-card active reveal">
+          <div class="icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 11V6.5C7 5.1 8.1 4 9.5 4C10.9 4 12 5.1 12 6.5V11M12 11V5.5C12 4.1 13.1 3 14.5 3C15.9 3 17 4.1 17 5.5V12M17 12V8.5C17 7.1 18.1 6 19.5 6C20.9 6 22 7.1 22 8.5V14C22 18.4 18.4 22 14 22H11.5C8.5 22 6.2 20.6 4.8 18.3L2.4 14.4C1.8 13.4 2.1 12.1 3.1 11.5C4 11 5.2 11.2 5.9 12L8 14.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Penyelenggaraan Berkala</h3>
+          <p>Untuk rumah sewa, kedai, restoran dan premis yang mahu pemeriksaan paip lebih teratur.</p>
+          <a href="#contact" class="feature-link">Tanya pakej →</a>
+        </article>
+
+        <article class="feature-card reveal">
+          <div class="icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 3H17V8H19C20.1 8 21 8.9 21 10V13C21 14.1 20.1 15 19 15H17V21H7V15H5C3.9 15 3 14.1 3 13V10C3 8.9 3.9 8 5 8H7V3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7 8H17M9 15H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Pemasangan Baru</h3>
+          <p>Pemasangan singki, tandas, pili, pancuran, penapis air, pemanas air dan sambungan paip.</p>
+          <a href="#contact" class="feature-link">Dapatkan sebut harga →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="why">
+    <div class="container why-grid">
+      <div class="reveal">
+        <div class="section-kicker">Kenapa Pilih Kami</div>
+        <h2 class="section-title">Servis jelas, mudah dihubungi dan fokus pada masalah pelanggan.</h2>
+        <p class="section-desc">
+          Sebelum datang, pelanggan boleh hantar gambar, lokasi dan keadaan masalah melalui WhatsApp supaya pemeriksaan awal lebih cepat dan kerja lebih tersusun.
+        </p>
+
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-item-icon">⏱</div>
+            <div>
+              <h3>Respons Pantas</h3>
+              <p>Terus WhatsApp nombor yang tersedia untuk terangkan masalah dan atur jadual servis.</p>
+            </div>
+          </div>
+
+          <div class="why-item">
+            <div class="why-item-icon">✓</div>
+            <div>
+              <h3>Kerja Kemas</h3>
+              <p>Kawasan kerja diperiksa, dibersihkan dan hasil pembaikan diuji sebelum selesai.</p>
+            </div>
+          </div>
+
+          <div class="why-item">
+            <div class="why-item-icon">★</div>
+            <div>
+              <h3>Penjelasan Jelas</h3>
+              <p>Pelanggan diberi penerangan tentang punca masalah, pilihan pembaikan dan anggaran kos awal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-stack reveal">
+        <img class="main-photo" src="plumber.jpg" alt="Servis plumber profesional" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1000&q=80';">
+        <div class="floating-note">
+          <strong>Sebelum hubungi, sediakan 3 benda:</strong>
+          <p>Lokasi, gambar masalah dan penerangan ringkas. Ini membantu servis dibuat dengan lebih cepat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Perkhidmatan</div>
+          <h2 class="section-title">Servis plumber untuk masalah harian rumah dan premis.</h2>
+        </div>
+        <p class="section-desc">
+          Pilih servis yang sesuai, kemudian hubungi melalui WhatsApp untuk semakan lokasi, gambar masalah dan sebut harga awal.
+        </p>
+      </div>
+
+      <div class="services-grid stagger">
+        <article class="service-card reveal">
+          <div>
+            <div class="service-photo"><img src="https://images.unsplash.com/photo-1609210884848-2d530cfb2a07?q=80&w=900&auto=format&fit=crop" alt="Saluran air tersumbat" loading="lazy"></div>
+            <svg class="mini-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M3 15L15 3L21 9L9 21L3 15Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M13 5L19 11" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+            <h3>Saluran Tersumbat</h3>
+            <p>Membaikpulih floor drain, saluran bilik air, paip tersumbat dan aliran air perlahan.</p>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div>
+            <div class="service-photo"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=80" alt="Singki dapur tersumbat" loading="lazy"></div>
+            <svg class="mini-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2C8.4 6.4 6 9.9 6 13.4C6 17 8.7 20 12 20C15.3 20 18 17 18 13.4C18 9.9 15.6 6.4 12 2Z" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+            <h3>Singki Tersumbat</h3>
+            <p>Membersihkan singki dapur tersumbat, bau tidak menyenangkan dan air yang lambat surut.</p>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div>
+            <div class="service-photo"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=80" alt="Kerja paip bilik air" loading="lazy"></div>
+            <svg class="mini-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 4H20V9H4V4Z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M7 9V20M12 9V20M17 9V20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <h3>Tandas Tersumbat</h3>
+            <p>Servis tandas tersumbat, air melimpah, flush bermasalah dan saluran bilik air tidak lancar.</p>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div>
+            <div class="service-photo"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Paip bocor di rumah" loading="lazy"></div>
+            <svg class="mini-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 12H20M4 7H20M4 17H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M8 4V20M16 4V20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <h3>Paip Bocor</h3>
+            <p>Mengesan dan membaiki paip bocor, paip pecah, resapan dinding dan siling basah.</p>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div>
+            <div class="service-photo"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80" alt="Pemasangan paip air" loading="lazy"></div>
+            <svg class="mini-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 19H20V5H4V19Z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M8 19V12C8 9.8 9.8 8 12 8C14.2 8 16 9.8 16 12V19" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+            <h3>Paip Air & Pili</h3>
+            <p>Pembaikan pili bocor, tekanan air rendah, shower, jet spray dan sambungan paip air.</p>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div>
+            <div class="service-photo"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80" alt="Penyelenggaraan rumah dan premis" loading="lazy"></div>
+            <svg class="mini-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 4H18V20H6V4Z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M9 8H15M9 12H15M9 16H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <h3>Penyelenggaraan</h3>
+            <p>Pemeriksaan dan penyelenggaraan paip untuk rumah, kedai, restoran, pejabat dan hartanah sewa.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="gallery">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Galeri Kerja</div>
+          <h2 class="section-title">Paparan kemas untuk membina kepercayaan pelanggan.</h2>
+        </div>
+        <p class="section-desc">
+          Susunan galeri dibuat bersih dan profesional supaya pelanggan mudah memahami jenis kerja yang ditawarkan.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="gallery-main reveal">
+          <img src="https://images.unsplash.com/photo-1600566752229-250ed79470f8?auto=format&fit=crop&w=1200&q=80" alt="Ruang bilik air moden selepas kerja paip" loading="lazy">
+          <div class="gallery-overlay">
+            <h3>Servis rumah & premis</h3>
+            <p>Untuk tandas tersumbat, singki tersumbat, paip bocor dan kerja penyelenggaraan sekitar Johor Bahru.</p>
+          </div>
+        </article>
+
+        <div class="gallery-side stagger">
+          <article class="gallery-side-card reveal">
+            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=800&q=80" alt="Singki dapur moden" loading="lazy">
+            <div class="gallery-side-content">
+              <h3>Singki tersumbat</h3>
+              <p>Membersihkan saluran dapur, singki tersumbat dan aliran air perlahan.</p>
+            </div>
+          </article>
+
+          <article class="gallery-side-card reveal">
+            <img src="https://images.unsplash.com/photo-1604709178681-82325c04f8bd?auto=format&fit=crop&w=800&q=80" alt="Bilik air moden dengan kelengkapan paip" loading="lazy">
+            <div class="gallery-side-content">
+              <h3>Tandas & bilik air</h3>
+              <p>Membaiki tandas tersumbat, pili air, shower dan masalah kebocoran.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="process">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Proses Kami</div>
+          <h2 class="section-title">Cara kerja mudah, cepat dan jelas.</h2>
+        </div>
+        <a class="btn btn-soft" href="#contact">Mulakan Sekarang</a>
+      </div>
+
+      <div class="process stagger">
+        <article class="process-card reveal">
+          <h3>Hubungi Kami</h3>
+          <p>Hantar lokasi, gambar masalah dan jenis servis melalui WhatsApp.</p>
+        </article>
+
+        <article class="process-card reveal">
+          <h3>Semakan Awal</h3>
+          <p>Kami semak keadaan masalah, cadangan kerja dan anggaran kos awal.</p>
+        </article>
+
+        <article class="process-card reveal">
+          <h3>Juruteknik Datang</h3>
+          <p>Kerja dijalankan mengikut jadual dengan peralatan yang diperlukan.</p>
+        </article>
+
+        <article class="process-card reveal">
+          <h3>Kerja Selesai</h3>
+          <p>Kawasan dibersihkan, hasil diuji dan pelanggan diberi penerangan ringkas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Ulasan & Keyakinan</div>
+          <h2 class="section-title">Apa yang pelanggan biasanya perlukan daripada servis plumber.</h2>
+        </div>
+        <p class="section-desc">
+          Tiga perkara utama yang biasanya dicari pelanggan: respons cepat, penerangan jelas dan hasil kerja yang kemas.
+        </p>
+      </div>
+
+      <div class="testimonials stagger">
+        <article class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>“Saya mahu masalah cepat dikenal pasti, harga dijelaskan awal dan kerja tidak bersepah selepas selesai.”</p>
+          <div class="person">
+            <div class="avatar">1</div>
+            <div>
+              <strong>Keperluan Utama</strong>
+              <span>Respons cepat & jelas</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>“Saya mahu plumber yang boleh terangkan punca masalah, bukan sekadar datang tanpa penjelasan.”</p>
+          <div class="person">
+            <div class="avatar">2</div>
+            <div>
+              <strong>Kepercayaan</strong>
+              <span>Penerangan mudah faham</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>“Saya mahu kerja diuji dahulu supaya tandas, singki atau paip benar-benar kembali lancar.”</p>
+          <div class="person">
+            <div class="avatar">3</div>
+            <div>
+              <strong>Hasil Kerja</strong>
+              <span>Kemas & diuji</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Soalan Lazim</div>
+          <h2 class="section-title">Sebelum hubungi plumber, ini maklumat yang membantu.</h2>
+        </div>
+      </div>
+
+      <div class="faq-grid stagger">
+        <article class="faq-card reveal">
+          <h3>Apa perlu dihantar di WhatsApp?</h3>
+          <p>Hantar lokasi, gambar atau video pendek, jenis masalah dan waktu yang sesuai untuk dihubungi.</p>
+        </article>
+
+        <article class="faq-card reveal">
+          <h3>Boleh buat sebut harga awal?</h3>
+          <p>Boleh, tetapi harga akhir bergantung pada keadaan sebenar selepas pemeriksaan di lokasi.</p>
+        </article>
+
+        <article class="faq-card reveal">
+          <h3>Kawasan servis di mana?</h3>
+          <p>Fokus sekitar Taman Stulang Laut dan Johor Bahru. Hubungi dahulu untuk semak kawasan anda.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container reveal">
+      <h2>Perlukan Plumber di Johor Bahru?</h2>
+      <p>Hubungi 013-266 5532 untuk tandas tersumbat, singki tersumbat, paip bocor, paip air dan kerja penyelenggaraan.</p>
+      <a class="btn btn-primary" href="https://wa.me/60132665532?text=Hai%20Plumber%20City%20JB%2C%20saya%20mahu%20tanya%20servis%20plumber." target="_blank" rel="noopener">
+        Hubungi Sekarang
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="logo">
+            <span class="logo-mark" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C8.4 6.45 5.5 10.13 5.5 14.1C5.5 18.06 8.4 21 12 21C15.6 21 18.5 18.06 18.5 14.1C18.5 10.13 15.6 6.45 12 2Z" fill="currentColor"/>
+              </svg>
+            </span>
+            Plumber City JB
+          </a>
+          <p>
+            Perkhidmatan plumber sekitar Taman Stulang Laut dan Johor Bahru untuk tandas tersumbat,
+            singki tersumbat, paip bocor dan penyelenggaraan paip.
+          </p>
+        </div>
+
+        <div>
+          <h3>Perkhidmatan</h3>
+          <ul>
+            <li><a href="#services">Saluran Tersumbat</a></li>
+            <li><a href="#services">Singki Tersumbat</a></li>
+            <li><a href="#services">Tandas Tersumbat</a></li>
+            <li><a href="#services">Paip Bocor</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Kawasan</h3>
+          <ul>
+            <li>Taman Stulang Laut</li>
+            <li>Johor Bahru</li>
+            <li>Kawasan sekitar JB</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Hubungi</h3>
+          <ul>
+            <li><a href="tel:+60132665532">013-266 5532</a></li>
+            <li><a href="https://wa.me/60132665532" target="_blank" rel="noopener">WhatsApp Kami</a></li>
+            <li>Setiap hari mengikut ketersediaan jadual</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Plumber City JB. Semua hak cipta terpelihara.</span>
+        <div class="socials" aria-label="Pautan cepat">
+          <a href="https://wa.me/60132665532" target="_blank" rel="noopener" aria-label="WhatsApp">W</a>
+          <a href="#home" aria-label="Kembali ke atas">↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="float-wa" href="https://wa.me/60132665532?text=Hai%20Plumber%20City%20JB%2C%20saya%20mahu%20tanya%20servis%20plumber." target="_blank" rel="noopener" aria-label="WhatsApp Plumber City JB">
+    WA
+  </a>
+
+  <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "Plumber City JB",
+    "telephone": "+60132665532",
+    "areaServed": ["Taman Stulang Laut", "Johor Bahru"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Johor Bahru",
+      "addressRegion": "Johor",
+      "addressCountry": "MY"
+    },
+    "url": "https://masturplumber.github.io/"
+  }
+  </script>
+
+  <script>
+    const navMenu = document.getElementById("navMenu");
+    const hamburger = document.getElementById("hamburger");
+    const backToTop = document.getElementById("backToTop");
+    const contactForm = document.getElementById("contactForm");
+    const whatsappNumber = "60132665532";
+
+    hamburger.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("active");
+      hamburger.classList.toggle("active", isOpen);
+      hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    document.querySelectorAll(".nav-menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        hamburger.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 600) {
+        backToTop.classList.add("show");
+      } else {
+        backToTop.classList.remove("show");
+      }
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const service = document.getElementById("service").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const text = [
+        "Hai Plumber City JB, saya mahu minta servis plumber.",
+        "",
+        "Nama: " + (name || "-"),
+        "Nombor WhatsApp: " + (phone || "-"),
+        "Perkhidmatan: " + (service || "-"),
+        "Masalah: " + (message || "-"),
+        "",
+        "Lokasi saya: "
+      ].join("\n");
+
+      window.open("https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text), "_blank", "noopener");
+    });
+
+    document.querySelectorAll(".stagger").forEach((group) => {
+      Array.from(group.children).forEach((child, index) => {
+        child.style.setProperty("--i", index);
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+
+    revealElements.forEach((element) => observer.observe(element));
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
